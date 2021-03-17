@@ -2,39 +2,38 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Color Switch</title>
-  <link rel="stylesheet" href="./src/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Homework 10</title>
+  <link href="./src/styles.css" rel="stylesheet" />
 </head>
 
-<body class="body">
-  <!-- {{#each this}}
-  <article id="menu-template">
-    <h3 class="name">{{name}}</h3>
-    <p class="location">{{location}} </p>
-    <ul class="abilities">
-      {{#each abilities}}
-      <li class="abilicites-item">{{this}} </li>
-      {{/each}}
-    </ul>
-  </article>
-  {{/each}} -->
-  <div id="menu-container"></div>
+<body>
+  <div class="toolbar">
+    <!-- Разметка переключателя темы -->
+    <div class="theme-switch">
+      <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
+        <use href="./images/sprite.svg#sun"></use>
+      </svg>
 
-  <template id="menu-template">
-    <div class="menu">
-      <h3 class="menu-title">{{title}}</h3>
-      <ul class="menu-list">
-        {{#each items}}
-        <li class="menu-item">{{this}}</li>
-        {{/each}}
-      </ul>
+      <div class="theme-switch__control">
+        <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle"
+          aria-label="Переключить между тёмной и светлой темой" />
+        <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
+        </label>
+        <div aria-hidden="true" class="theme-switch__marker"></div>
+      </div>
+
+      <svg class="theme-switch__icon" aria-label="Иконка луны">
+        <use href="./images/sprite.svg#moon"></use>
+      </svg>
     </div>
-  </template>
+  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-  <script src="./src/index.js"></script>
+  <!-- В этот список рендери разметку меню -->
+  <ul class="menu js-menu"></ul>
+
 </body>
 
 </html>
